@@ -1,0 +1,54 @@
+#movie img, #movies img {
+	height: 75%;
+	/*width: 80%;*/
+}
+@media(min-width: 960px) {
+  #movies .col-md-3 .well {
+	height: 420px;
+  }
+
+}
+/*@media(min-width: 980px){
+.col-md-6 {
+	margin-left: 15%;
+}	
+}*/
+/*@media(max-width: 1000px){
+.change_theme {
+	margin-left: 50vw;
+}	
+}*/
+.navbar-nav {
+	display: flex;
+	flex-direction: row;
+}
+.navbar-brand {
+	color: #fff;
+	font-size: 24px;
+	font-weight: bold;
+}
+.navbar-nav li{
+	/*display: inline-block;*/
+	margin-top: 7px;
+	/*margin-left: 30%;*/
+	margin-right: 10px;
+}
+#saved_movie {
+	margin-top: 15px;
+}
+.header_text_for_category {
+	color: #fff;
+	font-size: 30px;
+	text-align: center;
+}
+.well img {
+	width: 80%;
+}
+.genreLabel {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+#thumbnail_big_picture {
+	width: 100%;
+}
