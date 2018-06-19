@@ -1,0 +1,11 @@
+@media (max-width: 768px) {
+  section.head {
+    background-position: 0 0; }
+  .logo a {
+    margin-left: 35px; }
+  header ul > li {
+    margin-right: 20px; }
+  .content aside {
+    margin: 80px 10%; }
+  .box ul {
+    padding-bottom: 0; } }

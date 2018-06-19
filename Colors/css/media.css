@@ -1,0 +1,71 @@
+@import url("media960.css");
+@import url("media768.css");
+@import url("media540.css");
+@-webkit-keyframes blockRuning1 {
+  100% {
+    -webkit-transform: translateX(370%);
+    transform: translateX(370%);
+  }
+}
+@keyframes blockRuning1 {
+  100% {
+    -webkit-transform: translateX(370%);
+    transform: translateX(370%);
+  }
+}
+
+@-webkit-keyframes blockRuning2 {
+  100% {
+    -webkit-transform: translateX(370%);
+    transform: translateX(370%);
+  }
+}
+
+@keyframes blockRuning2 {
+  100% {
+    -webkit-transform: translateX(370%);
+    transform: translateX(370%);
+  }
+}
+
+@-webkit-keyframes blockRuning3 {
+  100% {
+    -webkit-transform: translateX(370%);
+    transform: translateX(370%);
+  }
+}
+
+@keyframes blockRuning3 {
+  100% {
+    -webkit-transform: translateX(370%);
+    transform: translateX(370%);
+  }
+}
+
+@-webkit-keyframes blockRuning4 {
+  100% {
+    -webkit-transform: translateX(370%);
+    transform: translateX(370%);
+  }
+}
+
+@keyframes blockRuning4 {
+  100% {
+    -webkit-transform: translateX(370%);
+    transform: translateX(370%);
+  }
+}
+
+@-webkit-keyframes blockRuning5 {
+  100% {
+    -webkit-transform: translateX(370%);
+    transform: translateX(370%);
+  }
+}
+
+@keyframes blockRuning5 {
+  100% {
+    -webkit-transform: translateX(370%);
+    transform: translateX(370%);
+  }
+}

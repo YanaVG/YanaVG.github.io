@@ -1,0 +1,19 @@
+@media (max-width: 960px) {
+  section.head {
+    background-position: 0 0; }
+    section.head article {
+      padding-bottom: 0; }
+  header {
+    padding: 0 0 140px 0; }
+  .blocks {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .block:nth-child(2n+1) {
+    padding: 40px 50px 40px 10%;
+    width: auto; }
+  .block:nth-child(2n) {
+    padding: 40px 50px 40px 10%;
+    width: auto; } }
