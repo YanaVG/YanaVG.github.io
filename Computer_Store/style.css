@@ -1,0 +1,360 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: Tahoma;
+    src: url(fonts/tahoma.ttf);
+}
+
+@font-face {
+    font-family: AVIAN;
+    src: url(fonts/AVIAN.TTF);
+}
+
+body {
+
+    display: block;
+}
+.wrapper {
+   background-color: #FFFFFF;
+    font-family: Tahoma; 
+    height: 830px;
+    width: 775px; 
+    font-size: 12px;
+}
+header {
+    display: flex;
+    flex-direction: row;
+    width: 767px;
+    height: 75px;
+}
+
+.img_main,
+.shopping_cart,
+.choose_language,
+.currencies {
+    display: flex;
+    flex-direction: row;
+}
+
+.shopping_cart {
+    background-color: #780001;
+    width: 180px;
+    height: 75px;
+    background: url(images/b_cart.jpg) no-repeat;
+}
+
+
+.choose_language {
+    width: 128px;
+    height: 75px;
+    background: url(images/b_lang.jpg) repeat-y;
+    z-index: 1;
+}
+
+.img_lang {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 40px;
+    right: 60px;
+}
+
+.img_lang div img {
+    padding-left: 10px;
+    width: 26px;
+    height: 19px;
+}
+
+.currencies {
+    display: block;
+    width: 160px;
+    height: 75px;
+    text-align: center;
+    padding-top: 15px;
+    background: url(images/b_currencies1.jpg) repeat-y;
+}
+
+.choose_currencies {
+    width: 100px;
+    height: 21px;
+    margin-top: 10px;
+}
+
+.text_h {
+    color: white;
+    font-size: 10px;
+    font-family: Tahoma;
+}
+
+.items {
+    color: white;
+    font-size: 12px;
+    font-family: Tahoma;
+    padding-top: 5px;
+    padding-left: 125px;
+}
+
+.shopping_cart .text_h {
+    padding-top: 20px;
+    padding-left: 100px;
+}
+
+.choose_language .text_h {
+    font-size: 10px;
+    width: 128px;
+    height: 35px;
+}
+
+.img_main {
+    height: 76px;
+    width: 244px;
+    z-index: 1;
+}
+
+.main_04 {
+    width: 35px;
+    height: 74px;
+}
+
+.main_06 {
+    width: 35px;
+    height: 76px;
+}
+
+main {
+    height: 272px;
+    width: 771px;
+    margin-bottom: 5px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    padding-left: 43px;
+    padding-top: 18px;
+}
+
+nav a {
+    height: 22px;
+    width: 180px;
+}
+
+.main-17 {
+    position: relative;
+    left: 20px;
+    bottom: 2px;
+}
+
+.img_main-16 {
+    position: relative;
+    bottom: 129px;
+    left: 168px;
+    width: 32px;
+    height: 153px;
+}
+
+.main-18 {
+    position: relative;
+    bottom: 60px;
+    left: 17px;
+    width: 308px;
+    height: 99px;
+}
+
+.enter {
+    position: relative;
+    left: 235px;
+    bottom: 65px;
+    height: 60px;
+    width: 308px;
+}
+
+.contact {
+    display: flex;
+    flex-direction: row;
+}
+
+.box_category a {
+    display: flex;
+    flex-direction: column;
+    color: black;
+    text-decoration: none;
+    font-size: 11px;
+    font-family: Tahoma;
+    line-height: 22px;
+    border-bottom: 1px #ddd dotted;
+}
+
+.box_category {
+    display: inline-block;
+    margin-bottom: 160px;
+}
+
+.box_category div {
+    width: 212px;
+    height: 27px;
+}
+
+.all_links {
+    position: relative;
+    bottom: 10px;
+    left: 10px;
+}
+
+.details-68 {
+    height: 46px;
+    width: 212px;
+    position: relative;
+    top: 400px;
+}
+
+.wrap_prod {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    bottom: 80px;
+    left: 35px;
+}
+
+.img_browse {
+    position: relative;
+    bottom: 20px;
+}
+
+.all_prod {
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.all_prod div {
+    padding-bottom: 10px;
+}
+
+.main_window {
+    height: 520px;
+    width: 524px;
+    background-color: #1f1f1f;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    bottom: 20px;
+}
+
+.benq,
+.apple,
+.canon,
+.projector {
+    height: 150px;
+    width: 236px;
+    background-color: white;
+    border: 4px double black;
+    margin-left: 13px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+}
+
+.iriver img,
+.logitech img {
+    height: 150px;
+    width: 233px;
+    margin-left: 15px;
+    margin-bottom: 5px;
+}
+
+.benq .photo_prod,
+.apple .photo_prod,
+.canon .photo_prod,
+.projector .photo_prod {
+    height: 102px;
+    width: 126px;
+    border-bottom: 2px #ddd dashed;
+}
+
+.prod_name {
+    position: relative;
+    left: 120px;
+    bottom: 80px;
+    text-transform: uppercase;
+    color: black;
+    font-weight: bold;
+    font-size: 11px;
+    line-height: 14px;
+    width: 100px;
+}
+
+.prise {
+    color: red;
+    font-size: 14px;
+    line-height: 14px;
+    position: relative;
+    left: 130px;
+    bottom: 60px;
+}
+
+.details {
+    height: 19px;
+    width: 78px;
+    position: relative;
+    bottom: 35px;
+    left: 20px;
+}
+
+.add_to_cart {
+    width: 101px;
+    height: 19px;
+    position: relative;
+    bottom: 35px;
+    left: 20px;
+}
+
+footer {
+    width: 771px;
+    height: 65px;
+    display: inline;
+    position: relative;
+    top: 425px;
+    left: 5px;
+}
+
+.cards {
+    width: 244px;
+    height: 65px;
+}
+
+.links {
+    position: relative;
+    bottom: 60px;
+    left: 244px;
+    width: 523px;
+    height: 60px;
+    /*background: url(images/b_links.jpg) repeat-y;*/
+    font-size: 11px;
+    font-family: AVIAN;
+    background: #e9e8e9;
+    background: linear-gradient(to top, #bebebe 0%, #f4f3f3 70%, #fff 100%);
+}
+
+
+.links a {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+   
+  
+}
+.move_links {
+     padding-top: 10px;  
+    /* padding-left: 5px;*/
+    text-align: center;
+}
+
+.links p {
+    font-size: 10px;
+    padding-top: 10px;
+    padding-left: 20px;
+}
