@@ -1,0 +1,20 @@
+.s_area__wrap {
+  max-width: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  background-color: red; }
+
+.s_area__block {
+  max-width: 100%;
+  width: 100%; }
+
+.s_area__text {
+  max-width: 50%;
+  width: 50%; }
+
+.s_area__img-wr {
+  height: 76px; }
