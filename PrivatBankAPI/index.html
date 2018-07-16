@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css" rel='stylesheet' type='text/css'>
+    <link href="css/reset.css" rel='stylesheet' type='text/css'>
+    <link href="css/style.css" rel='stylesheet' type='text/css'>
+    <title>PrivatBank API</title>
+</head>
+<body>
+    <table class="centered bordered highlight">
+    <thead>
+        <tr class="table_head">
+            <th>Валюта</th>
+            <th>Покупка</th>
+            <th>Продажа</th>
+        </tr>
+    </thead>
+    <tbody id="js-tbody"></tbody>
+    </table>
+<button id="js-btn" class="btn">Получить</button>
+
+<script type="text/template" id="table-row">
+  <tr scope="row">
+    <td><%- ccy%></td>
+    <td><%- buy%></td>
+    <td><%- sale%></td>
+  </tr>
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+<script src="js/main.js"></script> 
+</body>
+</html>
