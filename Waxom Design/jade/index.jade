@@ -1,0 +1,264 @@
+doctype html
+html(lang='ru')
+
+	head
+		meta(charset='utf-8')
+
+		title Waxom by Swarty
+
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+		meta(property='og:image' content='img/tabs_img.jpg')
+		meta(property='og:image:type' content='img/jpg')
+		meta(property='og:image:width' content='300')
+		meta(property='og:image:height' content='300')
+		meta(property='og:site_name' content='Makets for own expiriense. by Ohorodnykov Dmytro, by swarty')
+		meta(property='og:title' content="by swarty")
+		meta(property='og:url' content= "swarty.github.io")
+		meta(property='og:description' content="Makets for own expiriense. by Ohorodnykov Dmytro, by swarty")
+
+		link(rel="shoutcut icon", type="img/png" href="img/favicon32.png" sizes="32x32")
+		link(rel="icon", type="img/png" href="img/favicon16.png" sizes="16x12")
+
+		//- bootstrap
+		link(rel="stylesheet", href="css/bootstrap.min.css")
+
+		//- fontawesome
+		link(rel="stylesheet", href="css/font-awesome.min.css")
+
+		//- css
+		link(rel="stylesheet", href="css/fonts.css")
+		link(rel="stylesheet", href="css/main.css")
+		link(rel="stylesheet", href="css/media.css")
+	body
+		section.sec_01
+			nav.navbar.navbar-default.navbar-absolute-top(role="navigation")
+				.container
+					.navbar-header
+						button(type = "button" data-toggle="collapse" data-target=".navbar-collapse").navbar-toggle
+							span.sr-only toggle navigation
+							span.icon-bar
+							span.icon-bar
+							span.icon-bar
+						a.navbar-brend(href="#").text-center
+							img(src="img/logo.png", alt="lal")
+					.navbar-collapse.collapse
+						ul.nav.navbar-nav.navbar-right
+							li
+								a(href="#") Home
+							li
+								a(href="#") About Us
+							li
+								a(href="#") Portfolio
+							li
+								a(href="#") Features
+							li
+								a(href="#") Blog
+							li
+								a(href="#") Pricing
+							li
+								a(href="#") Shortcodes
+							li
+								a(href="#") Contact
+							li
+								a(href="#").glyphicon.glyphicon-envelope
+							li
+								a(href="#").glyphicon.glyphicon-search
+			article.carousel.slide#myCarousel(data-ride="caruosel")
+				ol.carousel-indicators
+					li(data-target="#myCarousel" data-slide-to="0")
+					li(data-target="#myCarousel" data-slide-to="1")
+					li(data-target="#myCarousel" data-slide-to="2")
+					li(data-target="#myCarousel" data-slide-to="3")
+					li(data-target="#myCarousel" data-slide-to="4")
+				.carousel-inner
+					.item.active
+						.jumbotron.text-center
+							h2 Unique and modern design
+							h1 Portfolio PSD Template
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, reiciendis, aliquam. Praesentium eos, saepe corporis. Lorem ipsum dolor sit amet.
+							button(type="button").btn.btn-lg get started
+					.item
+						.jumbotron.text-center
+							h2 Unique and modern design
+							h1 Hello second slide
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, reiciendis, aliquam. Praesentium eos, saepe corporis. Lorem ipsum dolor sit amet.
+							button(type="button").btn.btn-lg get started
+					.item
+						.jumbotron.text-center
+							h2 Unique and modern design
+							h1 Hello thirth slide
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, reiciendis, aliquam. Praesentium eos, saepe corporis. Lorem ipsum dolor sit amet.
+							button(type="button").btn.btn-lg get started
+					.item
+						.jumbotron.text-center
+							h2 Unique and modern design
+							h1 Hello fourth slide
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, reiciendis, aliquam. Praesentium eos, saepe corporis. Lorem ipsum dolor sit amet.
+							button(type="button").btn.btn-lg get started
+					.item
+						.jumbotron.text-center
+							h2 Unique and modern design
+							h1 Hello fifth slide
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, reiciendis, aliquam. Praesentium eos, saepe corporis. Lorem ipsum dolor sit amet.
+							button(type="button").btn.btn-lg get started
+				a(href="#myCarousel" data-slide="prev").left.carousel-control
+					span.glyphicon.glyphicon-chevron-left
+				a(href="#myCarousel" data-slide="next").right.carousel-control
+					span.glyphicon.glyphicon-chevron-right
+		section.sec_02
+			.container.row-divider-bottom
+				.row
+					article.col-md-3.row-divider-top.header
+						.wrap
+							img(src="img/icon_1.png", alt="services")
+						h4 Web &amp; App Design
+						p Alias quis suscipit voluptatibus dolores eum minus illo consequuntur aspernatur excepturi. Optio.
+					article.col-md-3.row-divider-top.header
+						.wrap
+							img(src="img/icon_2.png", alt="services")
+						h4 Development
+						p Vitae dolore labore rem temporibus facilis quos, natus provident asperiores, illum nesciunt.
+					article.col-md-3.row-divider-top.header
+						.wrap
+							img(src="img/icon_3.png", alt="services")
+						h4 Customization
+						p Odio blanditiis voluptatem at accusantium, officiis neque autem nesciunt aut culpa dolorem!
+					article.col-md-3.row-divider-top.header
+						.wrap
+							img(src="img/icon_4.png", alt="services")
+						h4 Marketing
+						p Cupiditate sint omnis maxime voluptatem tempora alias, atque itaque cumque id dolores.
+		section.sec_03
+			.container.row-divider-top
+				.row
+					.col-md-12.header
+						h3 Waxom is realization of your ideas.
+						p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum dolorum laudantium nam, voluptatem maiores cumque! Lorem ipsum dolor sit.
+				.row
+					.col-md-12.content-divider-top
+						img(src="img/tabs_img.jpg", alt="desktop icons")
+		section.sec_04
+			.container
+				.row
+					article.col-md-9
+						span Waxom 
+						span Multipurpose WordPress
+						p Don't forget to rate the template. Thanks so much!
+					article.col-md-3
+						button(type="button").btn.btn-lg purchase now
+		section.sec_05
+			.container
+				.row.row-divider-top
+					.col-md-12.header
+						h3 Our latest Projects
+						p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi reprehenderit odio eius suscipit odit architecto neque sapiente exercitationem voluptatum?
+				.row
+					.col-md-12.content-divider-top.content-divider-bottom
+						button(type="button").btn.btn-lg All
+						button(type="button").btn.btn-lg Web Design
+						button(type="button").btn.btn-lg Mobile App
+						button(type="button").btn.btn-lg Illustration
+						button(type="button").btn.btn-lg Photography
+				.row.content-divider-bottom
+					.col-md-4
+						.wrap1
+							.hov_elem
+								a(href="#_")
+									<i class="fa fa-link" aria-hidden="true"></i>
+								a(href="#img1")
+									<i class="fa fa-search" aria-hidden="true"></i>
+						figure
+							h4 Claritas Etiam Processus
+							p Photography, Nature
+					.col-md-4
+						a(href="#img2")
+							.wrap2
+								.hov_elem
+									a(href="#_")
+										<i class="fa fa-link" aria-hidden="true"></i>
+									a(href="#img2")
+										<i class="fa fa-search" aria-hidden="true"></i>
+							figure
+								h4 Ouam Nutamus Farum
+								p Graphic Design, Mock-up
+					.col-md-4
+						a(href="#img3")
+							.wrap3
+								.hov_elem
+									a(href="#_")
+										<i class="fa fa-link" aria-hidden="true"></i>
+									a(href="#img3")
+										<i class="fa fa-search" aria-hidden="true"></i>
+							figure
+								h4 Usus Legentus Videntur
+								p Photography, Holiday
+				.row
+					.col-md-4
+						a(href="#img4")
+							.wrap4
+								.hov_elem
+									a(href="#_")
+										<i class="fa fa-link" aria-hidden="true"></i>
+									a(href="#img4")
+										<i class="fa fa-search" aria-hidden="true"></i>
+							figure
+								h4 Claritas Etiam Processus
+								p Photography, Nature
+					.col-md-4
+						a(href="#img5")
+							.wrap5
+								.hov_elem
+									a(href="#_")
+										<i class="fa fa-link" aria-hidden="true"></i>
+									a(href="#img5")
+										<i class="fa fa-search" aria-hidden="true"></i>
+							figure
+								h4 Quam Nutamus Farum
+								p Graphic Design Mock-up
+					.col-md-4
+						a(href="#img6")
+							.wrap6
+								.hov_elem
+									a(href="#_")
+										<i class="fa fa-link" aria-hidden="true"></i>
+									a(href="#img6")
+										<i class="fa fa-search" aria-hidden="true"></i>
+							figure
+								h4 Usus Legentis Videntur
+								p Photography, Holiday
+					a(href="#_").lightbox#img1
+						img(src="img/works_1.jpg", alt="works")
+					a(href="#_").lightbox#img2
+						img(src="img/works_2.jpg", alt="works")
+					a(href="#_").lightbox#img3
+						img(src="img/works_3.jpg", alt="works")
+					a(href="#_").lightbox#img4
+						img(src="img/works_4.jpg", alt="works")
+					a(href="#_").lightbox#img5
+						img(src="img/works_5.jpg", alt="works")
+					a(href="#_").lightbox#img6
+						img(src="img/works_6.jpg", alt="works")
+				.row.row-divider-bottom
+					.col-md-12
+						button(type="button").btn.btn-lg load more
+		section.sec_06
+			.container
+				.row.row-divider-top
+					article.col-md-5
+						img(src="img/adaptive_sec.png", alt="phone adaptive")
+					article.col-md-7
+						.wrap
+							h3 Excellent for mobile devices
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis aliquid quisquam consequuntur quis saepe dicta sequi deleniti. Nostrum sit enim soluta ea facilis ipsum, in, dolorum deserunt aliquam odit reprehenderit.
+							ul
+								li <i class="fa fa-angle-right" aria-hidden="true"></i>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+								li <i class="fa fa-angle-right" aria-hidden="true"></i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, a.
+								li <i class="fa fa-angle-right" aria-hidden="true"></i>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+								li <i class="fa fa-angle-right" aria-hidden="true"></i>Lorem ipsum dolor sit amet.
+		section.sec_7
+
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>

@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "Montserrat-regular";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/Montserrat-Regular.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Montserrat-bold";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/Montserrat-Bold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Montserrat-light";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/Montserrat-Light.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Montserrat-thin";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/Montserrat-Thin.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Raleway-bold";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/Raleway-Bold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Raleway-light";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/Raleway-Light.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Raleway-thin";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/Raleway-Thin.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Raleway-semibold";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/Raleway-SemiBold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Raleway-medium";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/Raleway-Medium.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Raleway-extrabold";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/Raleway-ExtraBold.ttf") format("truetype"); }

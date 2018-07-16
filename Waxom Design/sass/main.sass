@@ -1,0 +1,367 @@
+@import "fonts"
+$accent-color: #c7b299
+$text-color: #8c8c8c
+
+body
+	font-family: "Montserrat-light"
+
+.h1, .h2, .h3, .h4, .h5, .h6 , h1, h2, h3, h4, h5, h6
+	text-transform: capitalize
+	margin: 0
+
+.h1, h1
+	font-size: 52px
+	font-family: "Raleway-extrabold"
+
+.h2, h2
+	font-size: 36px
+	font-family: "Raleway-medium"
+
+.h3, h3
+	font-size: 30px
+	font-family: "Raleway-semibold"
+
+.h4, h4
+	font-size: 22px
+	font-family: "Raleway-semibold"
+
+.h5, h5
+	font-size: 16px
+	font-family: "Raleway-light"
+
+.h6, h6
+	font-size: 14px
+	font-family: "Raleway-thin"
+
+p
+	font-size: 14px
+	line-height: 1.8em
+	color: $text-color
+
+.row-divider-top
+	padding-top: 80px
+
+.row-divider-bottom
+	padding-bottom: 80px
+
+.content-divider-top
+	padding-top: 40px
+
+.content-divider-bottom
+	padding-bottom: 40px
+
+.header
+	color: #555555
+	text-align: center
+	h1
+		margin-bottom: 15px
+	h2
+		margin-bottom: 15px
+	h3
+		margin-bottom: 15px
+	h4
+		margin-bottom: 15px
+	p
+		margin: 0 auto
+		max-width: 750px
+
+
+.btn
+	margin: 3%
+	padding: 15px 40px
+	font-size: 14px
+	font-family: "Raleway-extrabold"
+	text-transform: uppercase
+	background-color: #998675
+	box-shadow: 0px 4px 1px 0px rgba(115,99,87,1)
+
+.sec_01
+	color: #fff
+	background-image: url("../img/bg_slider.jpg")
+	background-position: top
+	height: 100vh
+	background-repeat: no-repeat
+	.navbar
+		padding: 40px 0
+		margin-bottom: 0
+		border: none
+	.navbar-default
+		background-color: inherit
+		border: none
+		.navbar-nav>li
+			padding-top: 5px
+		.navbar-nav>li>a:hover
+			color: $accent-color
+		.navbar-nav>li>a:focus
+				color: $accent-color
+		.navbar-nav>li>a
+			font-size: 14px
+			padding-left: 13px
+			padding-right: 13px
+			color: #fff
+		.navbar-nav>li:nth-child(9)>a
+			// padding-left: 15px
+			font-size: 20px
+		.navbar-nav>li:nth-child(10)>a
+			font-size: 20px
+	.navbar-default .navbar-collapse, .navbar-default .navbar-form
+		border: none
+	.navbar-collapse
+		box-shadow: none
+		text-align: center
+	.jumbotron
+		position: relative
+		left: 50%
+		background-color: inherit
+		margin-top: 12%
+		margin-bottom: 10%
+		max-width: 750px
+		transform: translate(-50%, 0%)
+		h1
+			padding-bottom: 10px
+		p
+			font-size: 16px
+			color: #FFF
+	.carousel-control.right
+		background-image: none
+	.carousel-control.left
+		background-image: none
+	.carousel-indicators li
+		width: 10px
+		height: 10px
+		background-color: #939395
+		border: 2px
+	.carousel-indicators .active
+		width: 12px
+		height: 12px
+		background-color: inherit
+		box-sizing: border-box
+		border: 2px solid #d3c1ad
+
+.sec_02
+	article
+		text-align: center
+	article:hover
+		h4
+			transition: 0.5s
+			color: $accent-color
+		p:after
+			transition: 0.5s
+			background-color: $accent-color
+	article:nth-child(1):hover
+		.wrap 
+			img
+				content: url(../img/icon_1_hover.png)
+				width: 47px
+				height: 47px
+				position: relative
+				z-index: 10
+	article:nth-child(2):hover
+		.wrap 
+			img
+				content: url(../img/icon_2_hover.png)
+				width: 47px
+				height: 47px
+				position: relative
+				z-index: 10
+	article:nth-child(3):hover
+		.wrap 
+			img
+				content: url(../img/icon_3_hover.png)
+				width: 44px
+				height: 44px
+				position: relative
+				z-index: 10
+	article:nth-child(4):hover
+		.wrap 
+			img
+				content: url(../img/icon_4_hover.png)
+				width: 47px
+				height: auto
+				position: relative
+				z-index: 10
+	.wrap
+		height: 65px
+		img
+			position: relative
+			z-index: 1
+			margin: auto 0
+	p::after
+		display: block
+		margin: 0 auto
+		position: relative
+		bottom: -30px
+		width: 35%
+		height: 4px
+		content: ""
+		background-color: #f1eee9
+
+.sec_03
+	background-color: #fbfaf8
+	img
+		width: 100%
+		height: auto
+
+.sec_04
+	background-color: #2b211c
+	padding: 25px 25px
+	article
+		margin: auto 0
+	span
+		font-family: "raleway-light"
+		font-size: 28px
+		text-transform: capitalize
+		color: #fff
+	span:nth-child(1)
+		color: #958471
+	p
+		color: #615855
+		font-size: 18px
+		text-transform: capitalize
+		line-height: 1em
+		vertical-align: middle
+	button
+		color: #fff
+	button:hover
+		transition: .5s
+
+.sec_05
+	text-align: center
+	button
+		color: #fff
+	.row:nth-child(2)
+		button
+			font-family: "Montserrat-light"
+			background-color: inherit
+			border: 1px solid $accent-color
+			color: $text-color
+			margin: 0
+			padding: 10px 20px
+			box-shadow: 0px 1px 1px 0px rgba(115,99,87,1)
+		button:hover
+			transition: .5s
+			color: #fff
+			background-color: #998675
+			box-shadow: 0px 1px 1px 0px rgba(115,99,87,1)
+		button:focus
+			color: #fff
+			background-color: #998675
+			box-shadow: 0px 1px 1px 0px rgba(115,99,87,1)
+	[class*="wrap"]
+		display: flex
+		justify-content: space-around
+		background-size: cover
+		position: relative
+		z-index: 1
+		width: 100%
+		height: 250px
+		.hov_elem
+			display: none
+			a
+				color: #fff
+				i
+					padding: 10px
+	.wrap1
+		background-image: url("../img/works_1.jpg")
+	.wrap2
+		background-image: url("../img/works_2.jpg")
+	.wrap3
+		background-image: url("../img/works_3.jpg")
+	.wrap4
+		background-image: url("../img/works_4.jpg")
+	.wrap5
+		background-image: url("../img/works_5.jpg")
+	.wrap6
+		background-image: url("../img/works_6.jpg")
+	.lightbox
+		display: none
+		position: fixed
+		z-index: 1000
+		width: 100%
+		height: 100%
+		top: 0
+		left: 0
+		background-color: rgba(0,0,0,0.9)
+		img
+			max-width: 90%
+			max-height: 70%
+			margin-top: 15%
+	.lightbox:target
+			outline: none
+			display: block
+	a:focus,	a:hover
+		color: $accent-color
+	figure
+		background-color: #fbfaf8
+		text-align: left
+		padding: 15px 20px
+		height: 100px
+		h4
+			color: $accent-color
+	figure::before
+			position: absolute
+			content: ""
+			width: 20px
+			height: 20px
+			border-top: 2px solid #fbfaf8
+			border-right: 2px solid #fbfaf8
+			left: 40px
+			top: 240px
+			transform: rotate(-45deg)
+			background-color: #fbfaf8
+	.col-md-4:hover
+		.hov_elem
+			background-color: rgba(54,47,45,0.6)
+			width: 100%	
+			display: flex
+			justify-content: center
+			align-items: center
+			font-size: 26px
+			i:hover
+				color: $accent-color
+		a
+			text-decoration: none
+		figure
+			transition: .5s
+			background-color: #362f2d
+			h4
+				color: #fff
+			p
+				color: $accent-color
+		figure::before
+			transition: .5s
+			background-color: #362f2d
+			border-top: 2px solid #362f2d
+			border-right: 2px solid #362f2d
+
+.sec_06
+	position: relative
+	background-color: #fbfaf8
+	.wrap
+		margin: 80px 0
+	h3
+		margin-bottom: 15px
+	img
+		width: 80%
+		height: auto
+	ul
+		padding-top: 15px
+	ul>li
+		color: $text-color
+		list-style: none
+		padding: 5px 30px
+	ul>li
+		i
+			width: 20px
+			border-radius: 50%
+			height: auto
+			background-color: $accent-color
+			font-size: 20px
+			text-align: center
+			color: #fff
+			position: relative
+			left: -20px
+	ul>li:hover
+		i
+			transition: all .5s ease-in-out
+			transform: translateX(15px)
