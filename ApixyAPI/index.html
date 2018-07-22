@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="css/style.css" rel='stylesheet' type='text/css'>
+    <link href="css/reset.css" rel='stylesheet' type='text/css'>
+    <title>Weather</title>
+</head>
+<body>
+    <div class="wrapper">
+    <header>
+        <div class="header_row">
+            <div class="header_line_1">
+                <div class="red_box">
+                    <p>W</p>
+                </div>
+                <h1>Weather with you</h1>
+            </div>
+            <div class="header_line_2">
+                    <div class="red_line"></div>
+                    <p>Seven Days Forecast</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <form class="form">
+            <input type="text" class="input" placeholder="Write your city...">
+            <button type=" submit " class="button ">Submit</button>
+        </form>
+        <div class="wrap_city">
+            <div class="red_line"></div>
+            <h2>City: <span class="city_name"></span></h2>
+        </div>
+
+        <main class="main">
+            <!-- <p>Weather in <span class="weather__town"></span></p> -->
+            <div class="grid"></div>
+        </main>
+        <div class="modal modal--hidden">
+                <div class="modal__backdrop js-modal-backdrop">
+                  <div class="modal__window">
+                    <div class="modal--content js-modal--content"></div>
+                    <button class="modal__close js-close-modal"></button>
+                  </div>
+                </div>
+        </div>
+   </div>
+</div>
+    <script src="js/main.js"></script>
+</body>
+</html>
