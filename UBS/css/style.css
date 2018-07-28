@@ -109,20 +109,28 @@
 .wrap_sell--active {
     color: #fff;
     background-color: rgb(243, 40, 40);
-    border: 2px solid rgb(54, 181, 190);
+    /* border: 2px solid rgb(54, 181, 190); */
 }
 
 .wrap_buy--disable,
 .wrap_sell--disable
 {
     color: rgb(116, 116, 116);
-    border: 2px solid rgb(116, 116, 116);
+    /* border: 2px solid rgb(116, 116, 116); */
 }
 
 .wrap_buy--active {
     color: #fff;
     background-color: rgb(95, 207, 42);
-    border: 2px solid rgb(54, 181, 190);
+    /* border: 2px solid rgb(54, 181, 190); */
+}
+
+.wrap_buy--active::before {
+    background-color: rgb(95, 207, 42);
+}
+
+.wrap_sell--active::before {
+    background-color: rgb(95, 207, 42);
 }
 .arrow {
     width: 12%;

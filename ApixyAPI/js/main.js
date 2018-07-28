@@ -51,7 +51,7 @@ const hideModal = () => modal.classList.add('modal--hidden');
 
 //================= FETCH WEATHER ==================
 const fetchWeather = ({town, day}) => {
-    let url = `http://api.apixu.com/v1/forecast.json?key=${API_KEY}&q=${town}&days=${day}`;
+    let url = `https://api.apixu.com/v1/forecast.json?key=${API_KEY}&q=${town}&days=${day}`;
     
     return fetch(url)
         .then(response => {

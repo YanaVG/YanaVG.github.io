@@ -53,15 +53,15 @@ wrapBuy.addEventListener('mouseover', handleWrapBuy);
 function handleWrapSell (event) {
     console.log(event.target);
 
-    wrapSell.className = 'wrap_sell--active';
-    wrapBuy.className = 'wrap_sell--disable'; 
-    // wrapBuy.removeEventListener('focus', handleWrapBuy); 
+    wrapSell.classList.add('wrap_sell--active');
+    wrapBuy.classList.add('wrap_sell--disable'); 
+    wrapBuy.removeEventListener('focus', handleWrapBuy); 
 };
 
 function handleWrapBuy (event) {
     console.log(event.target);
 
-    wrapBuy.className = 'wrap_sell--active';
-    wrapSell.className = 'wrap_sell--disable';
-    // wrapSell.removeEventListener('focus', handleWrapSell);
+    wrapBuy.classList.add('wrap_sell--active');
+    wrapSell.classList.add('wrap_sell--disable');
+    wrapSell.removeEventListener('focus', handleWrapSell);
 };
