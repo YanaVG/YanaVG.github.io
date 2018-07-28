@@ -192,7 +192,6 @@ const handleFetchModal = e => {
 
 
 function showModalWithMoreInfo (event) {
-    
 
     showModal();
     modalContent.innerHTML = handleFetchModal();

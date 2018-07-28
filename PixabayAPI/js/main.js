@@ -59,13 +59,15 @@ const fetchImg = ({ query, count, page }) => {
             throw new Error('Error: ' + response.statusText)
         })
         .then(data => {
-            console.log(data.hits)
+            console.log(typeof data.hits)
             return data.hits
         })
         .catch(error => console.log('Error: ', error))
 };
 
-const createGridItems = items => {  
+const createGridItems = items => { 
+    console.log(typeof items)
+    console.log(items)
     return items.reduce((markup, item) => 
     markup + 
     `<div class='grid-item'>

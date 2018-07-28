@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="css/reset.css" rel="stylesheet" type='text/css'>
+    <link href="css/style.css" rel="stylesheet" type='text/css'>
+    <title>UBS</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="grid"></div>
+
+        <template id="list">
+            <div class="grid_item">
+                <h2 class="grid_item-pair">{{pair}}</h2>
+                <div class="wrap_usd">
+                    <div class="wrap_sell">
+                        <h6>Sell USD</h6>
+                        <p>{{sell}}</p>
+                    </div>
+                    <div class="arrow red_arrow"></div>
+                    <!-- <div class="green_arrow"></div> -->
+                    <div class="wrap_buy">
+                        <h6>Buy USD</h6>
+                        <p>{{buy}}</p>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script> 
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+<div class="grid"></div>
+
+<template id="list">
+    <div class="grid_item">
+        <h2 class="name">{{pair}}</h2>
+        <p class="size">Size: {{size}}</p>
+        <p class="color">Color: {{color}}</p>
+        <p class="price">Price: {{price}}</p>
+        <p class="release_date">Release date: {{release_date}}</p>
+        <p class="descr">Description: {{descr}}</p>
+    </div>
+</template>
