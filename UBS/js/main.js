@@ -1,4 +1,4 @@
-'use strict'
+// 'use strict'
 
 const posts = [
     {
@@ -41,20 +41,27 @@ const template = Handlebars.compile(list);
 const markup = posts.reduce((acc, post) => acc + template(post), '');
 grid.insertAdjacentHTML('afterbegin', markup);
 
+
 const wrapSell = document.querySelector('.wrap_sell');
 const wrapBuy = document.querySelector('.wrap_buy');
 
 wrapSell.addEventListener('mouseover', handleWrapSell);
 wrapBuy.addEventListener('mouseover', handleWrapBuy);
+wrapSell.addEventListener('mouseover', handleWrapSell);
+wrapBuy.addEventListener('mouseover', handleWrapBuy);
 
 function handleWrapSell (event) {
     console.log(event.target);
-    // wrapSell.className.add = 'wrap_sell--active';
-    // wrapBuy.className.add = 'wrap_sell--disable'; 
+
+    wrapSell.className = 'wrap_sell--active';
+    wrapBuy.className = 'wrap_sell--disable'; 
+    // wrapBuy.removeEventListener('focus', handleWrapBuy); 
 };
 
 function handleWrapBuy (event) {
     console.log(event.target);
-    // wrapBuy.className.add = 'wrap_sell--active';
-    // wrapSell.className.add = 'wrap_sell--disable'; 
+
+    wrapBuy.className = 'wrap_sell--active';
+    wrapSell.className = 'wrap_sell--disable';
+    // wrapSell.removeEventListener('focus', handleWrapSell);
 };
