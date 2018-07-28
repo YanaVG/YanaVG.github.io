@@ -41,12 +41,10 @@ let inputTown = '';
 //===================== MODAL ===========================
 function handleBackdropClick (event) {
     if(this !== event.target) return;
-
     hideModal();
 };
 
 const showModal = () => modal.classList.remove('modal--hidden');
-
 const hideModal = () => modal.classList.add('modal--hidden');
 
 //================= FETCH WEATHER ==================
