@@ -35,7 +35,6 @@ let inputTown = '';
 //     .then(data => data.ip)
 //     .catch(err => console.log(err));
 // };
-
 //     getUserIP().then(fetchWeatherById)
 //   .then(data => console.log(data));
 
@@ -186,7 +185,7 @@ const handleFetchModal = e => {
     if(nodeName !== true) return;
     handleMoreInformation({
         town: inputTown,
-        // day: target.
+        //  day: target.
     })
 }
 
