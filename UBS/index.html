@@ -11,20 +11,23 @@
 <body>
     <div class="wrapper">
         <div class="grid"></div>
-
         <template id="list">
             <div class="grid_item">
                 <h2 class="grid_item-pair">{{pair}}</h2>
                 <div class="wrap_usd">
                     <div class="wrap_sell">
                         <h6>Sell USD</h6>
-                        <p>{{sell}}</p>
+                        <div class="wrap_value">
+                            {{formatValue sell}}
+                        </div>
                     </div>
                     <div class="arrow red_arrow"></div>
                     <!-- <div class="green_arrow"></div> -->
                     <div class="wrap_buy">
                         <h6>Buy USD</h6>
-                        <p>{{buy}}</p>
+                        <div class="wrap_value wrap_buy-value">
+                            {{formatValue buy}}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -35,15 +38,6 @@
 </body>
 </html>
 
-<div class="grid"></div>
-
-<template id="list">
-    <div class="grid_item">
-        <h2 class="name">{{pair}}</h2>
-        <p class="size">Size: {{size}}</p>
-        <p class="color">Color: {{color}}</p>
-        <p class="price">Price: {{price}}</p>
-        <p class="release_date">Release date: {{release_date}}</p>
-        <p class="descr">Description: {{descr}}</p>
-    </div>
-</template>
+<!-- <div class="beginning">{{splitToStrings(currencies.buy,0 ,4)}}</div>
+        <div class="middle">{{splitToStrings(currencies.buy,4 ,6)}}</div>
+        <div class="end">{{splitToStrings(currencies.buy,6 ,7)}}</div> -->

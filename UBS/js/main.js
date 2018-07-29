@@ -1,6 +1,6 @@
 // 'use strict'
 
-const posts = [
+let posts = [
     {
         "pair": "USD CHF", 
         "buy":  0.99143, 
@@ -33,35 +33,49 @@ const posts = [
     }
   ];
 
+
+const getRandom10pc = (num) => {
+    return Math.random() * num / 10;
+};
+  
+const getRandomSign = () => Math.random() > 0.5 ? -1 : 1;
+  
+function randomData (arr) {
+    return arr.map(el => ({
+    "pair": el["pair"],
+    "buy": el["buy"] + getRandomSign() * getRandom10pc(el["buy"]),
+    "sell": el["sell"] + getRandomSign() * getRandom10pc(el["sell"])
+  }));
+};
+
+const updatePosts = window.setInterval(function() {
+    posts = randomData(posts)
+    // console.log('new posts: ', posts);
+}, 1000);
+
 const grid = document.querySelector('.grid');
 const list = document.querySelector('#list').innerHTML.trim();
 
 const template = Handlebars.compile(list);
 
-const markup = posts.reduce((acc, post) => acc + template(post), '');
+Handlebars.registerHelper("formatValue", function(property) {
+    let value = property.toString();
+    setInterval(function(){
+        value = property.toString();
+    }, 1000);
+    return new Handlebars.SafeString(
+        "<p class='value_text'>" + value.substring(0, 4) + "</p>" + 
+        "<p class='value_text-bold'>" + value.substring(4, 6) + '</p>' + 
+        "<h4>" + value.substring(6, 7) + "<h4>"  
+    );
+});
+
+Handlebars.registerHelper("changeValue", function(posts) {
+    
+})
+
+const markup = randomData(posts).reduce((acc, post) => acc + template(post), '');
 grid.insertAdjacentHTML('afterbegin', markup);
 
-
-const wrapSell = document.querySelector('.wrap_sell');
-const wrapBuy = document.querySelector('.wrap_buy');
-
-wrapSell.addEventListener('mouseover', handleWrapSell);
-wrapBuy.addEventListener('mouseover', handleWrapBuy);
-wrapSell.addEventListener('mouseover', handleWrapSell);
-wrapBuy.addEventListener('mouseover', handleWrapBuy);
-
-function handleWrapSell (event) {
-    console.log(event.target);
-
-    wrapSell.classList.add('wrap_sell--active');
-    wrapBuy.classList.add('wrap_sell--disable'); 
-    wrapBuy.removeEventListener('focus', handleWrapBuy); 
-};
-
-function handleWrapBuy (event) {
-    console.log(event.target);
-
-    wrapBuy.classList.add('wrap_sell--active');
-    wrapSell.classList.add('wrap_sell--disable');
-    wrapSell.removeEventListener('focus', handleWrapSell);
-};
+// console.log();
+// posts.forEach()

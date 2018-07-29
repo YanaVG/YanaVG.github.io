@@ -12,9 +12,8 @@
 }
       
 .grid_item {
-    padding: 16px;
-    border-radius: 2px;
     padding: 10px;
+    border-radius: 2px;
     box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
     0px 2px 2px 0px rgba(142, 141, 141, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
 }
@@ -35,26 +34,34 @@
 }
 
 .wrap_sell {
-    width: 30%;
-    height: 40px;
-    margin-top: 0.5em;
-    margin-left: 4%;
-    color: rgb(224, 40, 37);
-    background: #fff;
     position: relative;
-    -moz-border-radius:    7px;
-    -webkit-border-radius: 7px;
-    border-radius:         7px;
+    z-index: 1;
+    width: 35%;
+    height: 40px;
+    margin: 0.5em;
+    border-radius: 7px;
+    border: 2px solid #ccc;
+    border-width: 2px 0 2px 2px;
+    background: #fff;
+    color: rgb(224, 40, 37);
+    /* -moz-border-radius:    7px;
+    -webkit-border-radius: 7px; */
 }
 
 .wrap_sell::before {
     content:"";
     position: absolute;
-    left: 93%;
-    height: 5px;
-    border-top: 17px solid transparent;
-    border-left: 20px solid #fff;
-    border-bottom: 17px solid transparent;
+    z-index: -2;
+    transform: rotate(45deg);
+    left: 70%;
+    top: 2px;
+    height: 32px;
+    width: 35px;
+    border: 2px solid #ccc;
+    border-width: 2px 2px 0px 0px;
+    border-radius: 12px 7px 7px 0;
+    border-top-right-radius: 30%;
+    background-color: #fff;;
  } 
 
 .wrap_sell h6{
@@ -64,84 +71,92 @@
 }
 
 .wrap_sell p {
-    margin-top: 18%;
-    margin-left: 4%;
     text-align: left;
-
+    margin-left: 4%;
 }
 
 .wrap_buy {
-   width: 30%;
-   height: 40px;
-   margin-top: 0.5em;
-   margin-left: 13%;
-   color: rgb(17, 172, 61);
-   background: #fff;
-   position: relative;
-   -moz-border-radius:    7px; 
-   -webkit-border-radius: 7px;
-   border-radius:         7px;
+    position: relative;
+    z-index: 1;
+    width: 35%;
+    height: 40px;
+    margin: 0.5em;
+    border: 2px solid #ccc;
+    border-radius: 7px;
+    background: #fff;
+    color: rgb(17, 172, 61);
 }
 
 .wrap_buy::before {
-   content:"";
-   position: absolute;
-   right: 93%;
-   height: 6px;
-   border-top: 17px solid transparent;
-   border-right: 20px solid #fff;
-   border-bottom: 17px solid transparent;
+    content:"";
+    position: absolute;
+    z-index: -2;
+    transform: rotate(45deg);
+    right: 70%;
+    top: 2px;
+    height: 32px;
+    width: 35px;
+    border: 2px solid #ccc;
+    border-width: 0px 0px 2px 2px;
+    border-radius: 7px 0px 7px 12px;
+    border-top-left-radius: 30%;
+    background-color: #fff;
 }
 
 .wrap_buy h6{
+    text-align: right;
     margin-top: 5%;
     margin-right: 4%;
     font-size: 8px;
-    text-align: right;
 }
 
-.wrap_buy p {
-    margin-top: 18%;
+.wrap_buy {
+    text-align: right;
     margin-right: 4%;
-    text-align: right;
 }
 
-.wrap_sell--active {
+.wrap_sell:hover {
+    border: 1px solid rgb(54, 181, 190);
     color: #fff;
     background-color: rgb(243, 40, 40);
-    /* border: 2px solid rgb(54, 181, 190); */
 }
 
-.wrap_buy--disable,
-.wrap_sell--disable
-{
-    color: rgb(116, 116, 116);
-    /* border: 2px solid rgb(116, 116, 116); */
-}
-
-.wrap_buy--active {
+.wrap_buy:hover {
+    background-color: rgb(95, 207, 42);
     color: #fff;
-    background-color: rgb(95, 207, 42);
-    /* border: 2px solid rgb(54, 181, 190); */
+    border: 2px solid rgb(54, 181, 190);
 }
 
-.wrap_buy--active::before {
+.wrap_buy:hover::before {
+    border: 1px solid rgb(54, 181, 190);
+    border-width: 0px 0px 2px 2px;
     background-color: rgb(95, 207, 42);
 }
 
-.wrap_sell--active::before {
-    background-color: rgb(95, 207, 42);
+.wrap_sell:hover::before {
+    border: 1px solid rgb(54, 181, 190);
+    border-width: 2px 2px 0px 0px;
+    background-color: rgb(243, 40, 40);
 }
-.arrow {
-    width: 12%;
-    margin-left: 12%;
+
+.wrap_value {
+    display: flex;
 }
+
+/* .wrap_buy-value {
+    position: relative;
+} */
+.wrap_buy-value p, .wrap_buy-value h4 {
+    text-align: right;
+}
+ .arrow {
+    margin: 0.5em;
+} 
 
 .red_arrow {
     /* display: none; */
     width: 0;
     height: 0;
-    margin-top: 0.5em;
     border-top: 15px solid #d82020;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
@@ -155,4 +170,15 @@
     border-bottom: 15px solid #186b0b;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
+}
+
+.value_text-bold {
+    margin-top: 12%;
+    font-weight: bold;
+    font-size: 20px;
+    padding-bottom: 6px;
+}
+
+.value_text {
+    margin-top: 15%;
 }

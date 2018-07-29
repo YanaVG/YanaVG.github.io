@@ -189,13 +189,12 @@ const handleFetchModal = e => {
 
 
 function showModalWithMoreInfo (event) {
-
     showModal();
     modalContent.innerHTML = handleFetchModal();
     // target.innerHTML;
 };
 
 grid.addEventListener('click', showModalWithMoreInfo);
-form.addEventListener('click', handleFormSubmit);
+form.addEventListener('submit', handleFormSubmit);
 modalBackdrop.addEventListener('click', handleBackdropClick);
 modalCloseBtn.addEventListener('click', hideModal);
