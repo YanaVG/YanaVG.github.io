@@ -1,4 +1,4 @@
-// 'use strict'
+'use strict'
 
 let posts = [
     {
@@ -33,12 +33,40 @@ let posts = [
     }
   ];
 
+const grid = document.querySelector('.grid');
+const list = document.querySelector('#list').innerHTML.trim();
 
-const getRandom10pc = (num) => {
+const template = Handlebars.compile(list);
+
+Handlebars.registerHelper("formatValue", function(property) {
+    let value = property.toString();
+    
+    return new Handlebars.SafeString(
+        "<p class='value_text'>" + value.substring(0, 4) + "</p>" + 
+        "<p class='value_text-bold'>" + value.substring(4, 6) + '</p>' + 
+        "<h4>" + value.substring(6, 7) + "<h4>"  
+    );
+});
+
+const markup = posts.reduce((acc, post) => acc + template(post), '');
+grid.insertAdjacentHTML('afterbegin', markup);
+
+const wrapUsd = document.querySelectorAll(".wrap_usd");
+const wrapSellValue = Array.from(document.querySelectorAll(".wrap_sell-value"));
+const wrapBuyValue = Array.from(document.querySelectorAll(".wrap_buy-value"));
+// const arrow = document.querySelector(".arrow");
+
+console.log(wrapBuyValue)
+console.log(wrapSellValue); 
+const dataSetArr = [];
+
+function getRandom10pc(num){
     return Math.random() * num / 10;
 };
   
-const getRandomSign = () => Math.random() > 0.5 ? -1 : 1;
+function getRandomSign() { 
+    return Math.random() > 0.5 ? -1 : 1;
+};
   
 function randomData (arr) {
     return arr.map(el => ({
@@ -48,34 +76,45 @@ function randomData (arr) {
   }));
 };
 
-const updatePosts = window.setInterval(function() {
+window.setInterval(function() {
     posts = randomData(posts)
-    // console.log('new posts: ', posts);
 }, 1000);
 
-const grid = document.querySelector('.grid');
-const list = document.querySelector('#list').innerHTML.trim();
+function getDataSell(arr) {
+    arr.forEach(item => dataSetArr.push(item.dataset.sell))
+};
+getDataSell(wrapUsd);
 
-const template = Handlebars.compile(list);
+function updateDate() {
+    posts.forEach(post => {
+        let postKey = post.pair;
 
-Handlebars.registerHelper("formatValue", function(property) {
-    let value = property.toString();
-    setInterval(function(){
-        value = property.toString();
-    }, 1000);
-    return new Handlebars.SafeString(
-        "<p class='value_text'>" + value.substring(0, 4) + "</p>" + 
-        "<p class='value_text-bold'>" + value.substring(4, 6) + '</p>' + 
-        "<h4>" + value.substring(6, 7) + "<h4>"  
-    );
+        wrapUsd.forEach(item => {
+            let dataSetItem = item.dataset.sell;
+
+            if(dataSetItem === postKey) { 
+                // console.log(dataSetItem, postKey);
+                // console.log(post.sell, post.buy);
+                 wrapSellValue.textContent = (post.sell).toFixed(5);
+                 wrapBuyValue.textContent = (post.buy).toFixed(5);
+            }   
+        })
 });
+}
+window.setInterval(function() {
+    updateDate();
+}, 1000);
 
-Handlebars.registerHelper("changeValue", function(posts) {
-    
-})
 
-const markup = randomData(posts).reduce((acc, post) => acc + template(post), '');
-grid.insertAdjacentHTML('afterbegin', markup);
 
-// console.log();
-// posts.forEach()
+
+
+        // dataSetArr.find(key => {
+        //     if(key === postKey && wrapUsd.dataSet === postKey) {
+        //         console.log(key, postKey); 
+        //         // wrapSellValue.textContent = (post.sell).toFixed(5);
+        //         // wrapBuyValue.textContent = (post.buy).toFixed(5);
+        //     } else {
+        //         console.log('mistatake');
+        //     }
+        // }) 
