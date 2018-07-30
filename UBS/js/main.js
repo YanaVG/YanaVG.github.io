@@ -51,8 +51,6 @@ grid.insertAdjacentHTML('afterbegin', markup);
 
 const wrapUsd = document.querySelectorAll(".wrap_usd");
 
-// const arrow = document.querySelector(".arrow"); 
-
 function getRandom10pc(num){
     return Math.random() * num / 10;
 };
@@ -88,6 +86,15 @@ function update() {
         el.querySelector('.wrap_buy .value_begin').textContent = buyToString.substring(0, 4);
         el.querySelector('.wrap_buy .value_middle').textContent = buyToString.substring(4, 6);
         el.querySelector('.wrap_buy h4').textContent = buyToString.substring(6, 7);
+        
+        let arrow = el.querySelector(".arrow"); 
+        if(buyToString > sellToString) {
+            arrow.classList.remove("red_arrow"); 
+            arrow.classList.add("green_arrow");
+        } else {
+            arrow.classList.remove("green_arrow");
+            arrow.classList.add("red_arrow"); 
+        }
     });
 };
 
