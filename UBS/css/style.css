@@ -44,8 +44,6 @@
     border-width: 2px 0 2px 2px;
     background: #fff;
     color: rgb(224, 40, 37);
-    /* -moz-border-radius:    7px;
-    -webkit-border-radius: 7px; */
 }
 
 .wrap_sell::before {
@@ -59,12 +57,12 @@
     width: 35px;
     border: 2px solid #ccc;
     border-width: 2px 2px 0px 0px;
-    border-radius: 12px 7px 7px 0;
+    border-radius: 12px 8px 8px 0;
     border-top-right-radius: 30%;
     background-color: #fff;;
  } 
 
-.wrap_sell h6{
+.wrap_sell h6 {
     margin-top: 5%;
     margin-left: 5%;
     font-size: 8px;
@@ -98,7 +96,7 @@
     width: 35px;
     border: 2px solid #ccc;
     border-width: 0px 0px 2px 2px;
-    border-radius: 7px 0px 7px 12px;
+    border-radius: 8px 0px 8px 12px;
     border-top-left-radius: 30%;
     background-color: #fff;
 }
@@ -112,7 +110,6 @@
 
 .wrap_buy {
     text-align: right;
-    margin-right: 4%;
 }
 
 .wrap_sell:hover {
@@ -141,15 +138,25 @@
 
 .wrap_value {
     display: flex;
+    margin-left: 5%;
 }
 
-/* .wrap_buy-value {
-    position: relative;
-} */
-.wrap_buy-value p, .wrap_buy-value h4 {
-    text-align: right;
+.value_begin {
+    margin-top: 15%;
 }
- .arrow {
+
+.value_middle {
+    margin-top: 12%;
+    font-weight: bold;
+    font-size: 20px;
+    padding-bottom: 6px;
+}
+
+.wrap_buy-value p {
+    margin-left: 5%;
+}
+
+.arrow {
     margin: 1em;
 } 
 
@@ -168,15 +175,4 @@
     border-bottom: 15px solid #186b0b;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
-}
-
-.value_text-bold {
-    margin-top: 12%;
-    font-weight: bold;
-    font-size: 20px;
-    padding-bottom: 6px;
-}
-
-.value_text {
-    margin-top: 15%;
 }
