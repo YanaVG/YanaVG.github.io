@@ -52,13 +52,15 @@ const markup = posts.reduce((acc, post) => acc + template(post), '');
 grid.insertAdjacentHTML('afterbegin', markup);
 
 const wrapUsd = document.querySelectorAll(".wrap_usd");
-const wrapSellValue = Array.from(document.querySelectorAll(".wrap_sell-value"));
-const wrapBuyValue = Array.from(document.querySelectorAll(".wrap_buy-value"));
-// const arrow = document.querySelector(".arrow");
+// const wrapSellValue = Array.from(document.querySelectorAll(".wrap_sell-value"));
+// const wrapBuyValue = Array.from(document.querySelectorAll(".wrap_buy-value"));
+const wrapSellValue = document.querySelector(".wrap_sell-value");
+const wrapBuyValue = document.querySelectorAll(".wrap_buy-value");
+const valueText = document.querySelector(".value_text");
+const valueTextBold = document.querySelector(".value_text-bold");
+const valueTextUpper = document.querySelector(".wrap_sell-value h4");
 
-console.log(wrapBuyValue)
-console.log(wrapSellValue); 
-const dataSetArr = [];
+const arrow = document.querySelector(".arrow"); 
 
 function getRandom10pc(num){
     return Math.random() * num / 10;
@@ -80,26 +82,29 @@ window.setInterval(function() {
     posts = randomData(posts)
 }, 1000);
 
-function getDataSell(arr) {
-    arr.forEach(item => dataSetArr.push(item.dataset.sell))
-};
-getDataSell(wrapUsd);
-
 function updateDate() {
     posts.forEach(post => {
         let postKey = post.pair;
-
         wrapUsd.forEach(item => {
             let dataSetItem = item.dataset.sell;
-
             if(dataSetItem === postKey) { 
                 // console.log(dataSetItem, postKey);
-                // console.log(post.sell, post.buy);
-                 wrapSellValue.textContent = (post.sell).toFixed(5);
-                 wrapBuyValue.textContent = (post.buy).toFixed(5);
+                let postSellString = post.sell.toString();
+                valueText.textContent = postSellString.substring(0, 4);
+                valueTextBold.textContent = postSellString.substring(4, 6);
+                valueTextBold.textContent = postSellString.substring(6, 7);
+                //  wrapSellValue.textContent = (post.sell).toFixed(5);
+                //  wrapBuyValue.textContent = (post.buy).toFixed(5);
             }   
         })
 });
+if(getRandomSign() > 0) {
+    arrow.classList.remove("red_arrow"); 
+    arrow.classList.add("green_arrow");
+} else {
+    arrow.classList.remove("green_arrow");
+    arrow.classList.add("red_arrow");  
+}
 }
 window.setInterval(function() {
     updateDate();

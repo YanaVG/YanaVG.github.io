@@ -150,11 +150,10 @@
     text-align: right;
 }
  .arrow {
-    margin: 0.5em;
+    margin: 1em;
 } 
 
 .red_arrow {
-    /* display: none; */
     width: 0;
     height: 0;
     border-top: 15px solid #d82020;
@@ -163,7 +162,6 @@
 }
 
 .green_arrow {
-    /* display: none; */
     width: 0;
     height: 0;
     margin-top: 0.5em;
