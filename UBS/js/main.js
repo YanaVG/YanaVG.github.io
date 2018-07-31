@@ -55,28 +55,27 @@ const wrapUsd = document.querySelectorAll(".wrap_usd");
 
 /**
  *
- *
+ * Returns tenth part of num
  * @param {number} num
- * @returns tenth part of num
+ * @returns {number} 
  */
 function getRandom10pc(num) {
     return Math.random() * num / 10;
 };
 
 /**
- *
- *
- * @returns value +/-1
+ * Returns random value +1 or -1
+ * @returns {number}
  */
 function getRandomSign() {
     return Math.random() > 0.5 ? -1 : 1;
 };
 
 /**
- *
- *
+ * Returns array with new values "buy" & "sell".  
+ * Ten percent of every value multiply by value +1 or -1 for adding or subtraction to previous value.
  * @param {obj} arr
- * @returns array with new values "buy" & "sell"
+ * @returns {obj}
  */
 function randomData(arr) {
     return arr.map(el => ({
@@ -88,11 +87,14 @@ function randomData(arr) {
 
 /**
  * @description Function update value of buy and sell in every grid_item
- * and show red/green arrow depends on difference between buy and sell values every 1000ms
+ * and show red/green arrow depends on difference between buy and sell values every 1000ms.
+ * Each number is divided and formatted according to the given form: 
+ * the first three digits are written in plain text, 
+ * the following two are highlighted in bold text, 
+ * the last number is raised above the whole number.
  */
 function update() {
     const arr = randomData(posts);
-
     Array.from(wrapUsd, el => {
         const key = el.dataset.sell;
         let obj = arr.filter(el => el.pair === key);
