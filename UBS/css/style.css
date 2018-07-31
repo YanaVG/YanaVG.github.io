@@ -101,15 +101,15 @@
     background-color: #fff;
 }
 
+.wrap_buy {
+    text-align: right;
+}
+
 .wrap_buy h6{
     text-align: right;
     margin-top: 5%;
     margin-right: 4%;
     font-size: 8px;
-}
-
-.wrap_buy {
-    text-align: right;
 }
 
 .wrap_sell:hover {
