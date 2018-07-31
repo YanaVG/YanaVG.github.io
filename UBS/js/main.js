@@ -67,12 +67,9 @@ function randomData (arr) {
   }));
 };
 
-window.setInterval(function() {
-    randomData(posts)
-}, 1000);
-
 function update() {
     const arr = randomData(posts);
+
     Array.from(wrapUsd, el => {
         const key = el.dataset.sell;
         let obj = arr.filter(el => el.pair === key);
@@ -87,7 +84,8 @@ function update() {
         el.querySelector('.wrap_buy .value_middle').textContent = buyToString.substring(4, 6);
         el.querySelector('.wrap_buy h4').textContent = buyToString.substring(6, 7);
         
-        let arrow = el.querySelector(".arrow"); 
+        let arrow = el.querySelector(".arrow");
+      
         if(buyToString > sellToString) {
             arrow.classList.remove("red_arrow"); 
             arrow.classList.add("green_arrow");
