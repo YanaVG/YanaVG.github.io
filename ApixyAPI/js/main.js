@@ -11,10 +11,14 @@ const modalBackdrop = document.querySelector('.js-modal-backdrop');
 const modalCloseBtn = document.querySelector('.js-close-modal');
 const modalContent = document.querySelector('.js-modal--content');
 
+
 const API_KEY = '4e16a6ee00ab4b349b374218181507';
 
 let inputTown = '';
-//================= FETCH WEATHER BY ID ==================
+let dataWeather = null;
+let checkDataSet = null;
+
+//================= FETCH WEATHER BY ID ===================
 // const fetchWeatherById = query => {
 // let url = `http://api.apixu.com/v1/forecast.json?key=${API_KEY}&q=${query}&days=2`;
 //  return fetch(url)
@@ -38,7 +42,7 @@ let inputTown = '';
 //     getUserIP().then(fetchWeatherById)
 //   .then(data => console.log(data));
 
-//===================== MODAL ===========================
+//===================== MODAL ===============================
 function handleBackdropClick (event) {
     if(this !== event.target) return;
     hideModal();
@@ -47,7 +51,7 @@ function handleBackdropClick (event) {
 const showModal = () => modal.classList.remove('modal--hidden');
 const hideModal = () => modal.classList.add('modal--hidden');
 
-//================= FETCH WEATHER ==================
+//================= FETCH WEATHER ============================
 const fetchWeather = ({town, day}) => {
     let url = `https://api.apixu.com/v1/forecast.json?key=${API_KEY}&q=${town}&days=${day}`;
     
@@ -62,16 +66,17 @@ const fetchWeather = ({town, day}) => {
         })
         .then(data => {
             console.log(data.forecastday)
+            dataWeather = data.forecastday
             return data.forecastday
         })
         .catch(error => console.log("Error: ", error))
 };
 
-//================= CREATE GRID ITEMS ==================
+//================= CREATE GRID ITEMS ============================
 const createGridItem = items => {
     return items.reduce((markup, item) => 
         markup +
-        `<div class="grid-item">
+        `<div class="grid-item" data-id=${item.date}>
            <p class="weather_date">${item.date}</p>
            <img class="weather_icon" src='https:${item.day.condition.icon}' alt="photo">
            <p>Max: <span class="weather_degree">${item.day.maxtemp_c} C</span></p>
@@ -80,28 +85,27 @@ const createGridItem = items => {
            <p>Sunset:  <span class="weather_sun">${item.astro.sunset}</span></p>
            <p>Humidity: ${item.day.avghumidity} %</p>
            <p>Condition: ${item.day.condition.text}</p>
+           <button class=" button btn_show-more" data-id=${item.date}>show more</button>
         </div>`
     ,'')
 };
 
-//================= UPDATE GRID ITEMS ==================
+//================= UPDATE GRID ITEMS ==============================
 const updateGridItems = markup => {
     grid.insertAdjacentHTML('beforeend', markup);
 };
 
-//================= RESET WEATHER GRID  ==================
-const resetWetherGrid = () => {
+//================= RESET WEATHER GRID  =============================
+const resetWeatherGrid = () => {
     grid.innerHTML = '';
 };
 
-//================= HANDLE FETCH ==================
+//================= HANDLE FETCH ====================================
 const handleFetch = params => {
-    
     fetchWeather(params).then(items => {
         const markup = createGridItem(items);      
         updateGridItems(markup);
     })
-
 };
 
 //================= CAPITALIZE FIRST LETTER IN WORD ==================
@@ -109,11 +113,11 @@ function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 };
 
-//================= SUBMIT FORM ==================
+//================= SUBMIT FORM ======================================
 const handleFormSubmit = e => {
     e.preventDefault();
    
-    resetWetherGrid();
+    resetWeatherGrid();
     
     inputTown = input.value;
     wrapCity.style.display = 'flex';
@@ -122,79 +126,58 @@ const handleFormSubmit = e => {
         town: inputTown,
         day: 7
     })
-
     form.reset();
 };
 
-//================= MODAL ==================
-// function handleModalContent(e) {
-//     e.preventDefault;
-//     const target = e.target;
-
-//     const nodeName = target.classList.contains('grid-item');
-
-//     if(nodeName !== true) return;
-//     // console.log(target.textContent);
-//     let innerContent = target.textContent;
-//         showModal();
-//     modalContent.innerHTML = innerContent;
-//     console.log(innerContent);
-// }
-
-const createGridItemForModal = items => {
-    console.log(typeof items)
-    return items.reduce((markup, item) => 
-        markup +
-        `<div class="grid-item grid-item__modal">
-           <p class="weather_date">${item.date}</p>
-           <img class="weather_icon" src='https:${item.day.condition.icon}' alt="photo">
-           <p class="weather_condition">${item.day.condition.text}</p>
-           <p>Max: <span class="weather_degree">${item.day.maxtemp_c} C</span></p>
-           <p>Min: <span class="weather_degree">${item.day.mintemp_c} C</span></p>
-           <p>Avg: <span class="weather_degree">${item.day.avgtemp_c} C</span></p>
-           <p>Sunrise:  <span class="weather_sun">${item.astro.sunrise}</span></p>
-           <p>Sunset:  <span class="weather_sun">${item.astro.sunset}</span></p>
-           <p>Moonrise:  <span class="weather_sun">${item.astro.moonrise}</span></p>
-           <p>Moomset:  <span class="weather_sun">${item.astro.moonset}</span></p>
-           <p>Humidity: ${item.day.avghumidity} %</p>
-           <p>Max wind: ${item.day.maxwind_kph} km</p>
-           <p>Min wind: ${item.day.maxwind_mph} km</p>
-        </div>`
-    ,'')
+const createGridItemForModal = ( item ) => {
+    return `<div class="grid-item grid-item__modal">
+            <div>
+                <p class="weather_date">${item.date}</p>
+                <img class="weather_icon" src='https:${item.day.condition.icon}' alt="photo">
+                <p class="weather_condition">${item.day.condition.text}</p>
+                <p>Max: <span class="weather_degree">${item.day.maxtemp_c} C</span></p>
+                <p>Min: <span class="weather_degree">${item.day.mintemp_c} C</span></p>
+                <p>Avg: <span class="weather_degree">${item.day.avgtemp_c} C</span></p>
+                <p>Sunrise:  <span class="weather_sun">${item.astro.sunrise}</span></p>
+                <p>Sunset:  <span class="weather_sun">${item.astro.sunset}</span></p>
+                <p>Moonrise:  <span class="weather_sun">${item.astro.moonrise}</span></p>
+                <p>Moonset:  <span class="weather_sun">${item.astro.moonset}</span></p>
+                <p>Humidity: ${item.day.avghumidity} %</p>
+                <p>Max wind: ${item.day.maxwind_kph} km</p>
+                <p>Min wind: ${item.day.maxwind_mph} km</p>
+            </div>
+        </div>`;
 };
 
-const updateGridItemsModl = markup => {
-    modalContent.insertAdjacentHTML('beforeend', markup);
-};
+// const updateGridItemsModl = markup => {
+//     modalContent.insertAdjacentHTML('beforeend', markup);
+// };
 
-function handleMoreInformation (params) {
-    
-    fetchWeather(params).then(items => {
-        const markup = createGridItemForModal(items);      
-        updateGridItemsModl(markup);
-    })
-}; 
+// function handleMoreInformation(item) {
+//     const markup = createGridItemForModal(item);
+//     updateGridItemsModl(markup);
+// }; 
 
-const handleFetchModal = e => {
-    // e.preventDefault();
+function handleFetchModal (event){
+    // event.preventDefault();
     const target = event.target;
-    const nodeName = target.classList.contains('grid-item');
-    console.log(target);
-    if(nodeName !== true) return;
-    handleMoreInformation({
-        town: inputTown,
-        //  day: target.
-    })
-}
+    const nodeDataSet = target.dataset.id;
 
+    checkDataSet = dataWeather.find(item => {
+        return item.date === nodeDataSet;
+    });
 
-function showModalWithMoreInfo (event) {
-    showModal();
-    modalContent.innerHTML = handleFetchModal();
-    // target.innerHTML;
+    showModalWithMoreInfo(checkDataSet);
 };
 
-grid.addEventListener('click', showModalWithMoreInfo);
+function showModalWithMoreInfo (data) {
+
+    console.log(createGridItemForModal(data));
+    modalContent.innerHTML = createGridItemForModal(data);
+    showModal();
+};
+
+grid.addEventListener('click', handleFetchModal);
 form.addEventListener('submit', handleFormSubmit);
 modalBackdrop.addEventListener('click', handleBackdropClick);
 modalCloseBtn.addEventListener('click', hideModal);
